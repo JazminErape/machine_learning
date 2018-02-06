@@ -8,13 +8,13 @@
 * ¿Cuales otros?
 
 ---
-# Requerimientos *
+# Requerimientos
 * Existe un patron
 * No podemos modelarlo matemáticamente
 * Tenemos datos sobre este problema
 
 ---
-# Components of learning
+# Describir las solicitudes como un vector de valores. 
 * Puntuación crediticia, informacion de la solicitud:
   |Caracteristica|Atributo|
   |--|--|
@@ -27,22 +27,17 @@
   |...|...|
 
 ---
-# 
-* Describir las solicitudes como un vector de valores.
-* 
-
----
-# Formalización *
+# Formalización
 
 * Entrada: $\mathbf{x}$ (solicitud de crédito)
 * Salida: $y$  (bueno/malo)
-* Función objetivo: $f:\mathcal{X} \rightarrow \mathcal{Y}$ (formula ideal de aprovación)
+* Función objetivo: $f:\mathcal{X} \rightarrow \mathcal{Y}$ (formula ideal de aprobación)
 * Datos: $(\mathbf{x}_1, y_1), (\mathbf{x}_2, y_2), ... , (\mathbf{x}_N, y_N)$ (Registos historicos)
-* 
+
 * Hipotesis: $g: \mathcal{X} \rightarrow \mathcal{Y}$ (fórmula que usaremos)
 
 ---
-# Diagrama de aprendizaje automático *
+# Diagrama de aprendizaje automático
 ![center](../images/learning_diagram.png)
 
 ---
@@ -77,3 +72,22 @@ $$ \mathrm{sign}(\mathbf{w}^\intercal\mathbf{x}_n) \neq y_n$$
 $$\mathbf{w} = \mathbf{w} + y_n\mathbf{x}_n $$
 
 Si los datos son linealmente separables, esta garantizado que converge.
+
+---
+# Tipos de aprendizaje automático
+ Usando un conjunto de observaciones descubrir un proceso escondido
+ * Aprendizaje supervisado (entrada, salida correcta)
+ * Aprendizaje no supervisado (entrada, ?)
+ * Aprendizaje por reforzamiento (entrada, salida, que tan correcta?)
+
+---
+# ¿Es posible aprender?
+* Queremos aproximarnos a la funcion $f$, sin embargo, solo conocemos como se comporta $f$ en $\mathbf{x}_1 ... \mathbf{x}_N$.
+* ¿Cómo podemos conocer el comportamiento de $f$ para nuevos datos de entrada $\mathbf{x}'_1...\mathbf{x}'_M$?
+
+---
+# Errores
+* Error en la muestra $E_\mathrm{in}$: Medida de la desigualdad entre $f$ y $g$ en los datos con los que se entreno $g$.
+* Error fuera de la muestra $E_\mathrm{out}$: Medida de la desigualdad entre $f$ y  $g$ en datos nuevos.
+* __Vamos a garantizar que $E_\mathrm{in} \approx E_\mathrm{out}$__
+* ¿Cómo podemos conocer o aproximarnos a $E_\mathrm{out}$?
