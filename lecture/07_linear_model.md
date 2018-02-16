@@ -77,7 +77,7 @@ y = [ [y_1],
 $$ E_{in} = \frac{1}{N} | X\mathrm{w} - \mathrm{y} |^2$$
 
 derivating,
-$$ \nabla E_{in}(\mathrm{w}) = \frac{2}{N} X^\intercal(X\mathrm{w} - y) = \mathbf{0} $$
+$$ \nabla E_{\mathrm{in}}(\mathrm{w}) = \frac{2}{N} X^\intercal(X\mathrm{w} - y) = \mathbf{0} $$
 
 $$X^\intercal X w = X^\intercal y$$
 
@@ -89,7 +89,7 @@ $X^\dagger = (X^\intercal X)^{-1}X^\intercal$ , is the __pseudo-inverse__ of $X$
 ---
 # The pseudo-inverse
 $$ X^\dagger = (X^\intercal X)^{-1} X^\intercal $$
-![](./images/pseudo_inverse.png)
+![](../images/pseudo_inverse.png)
 
 ---
 # The linear regression algorithm
@@ -145,7 +145,7 @@ $$ (x_1, x_2) - \phi(\mathrm{x}) \rightarrow (x_1^2, x_2^2) $$
 * Ilustrate the performance of a binary classifier.
 * True Positive Rate $TP/P$ _vs_ False Positive Rate $FP/N$
 
-![center](images/roc.png)
+![center](../images/roc.png)
 
 
 ---
