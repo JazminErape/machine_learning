@@ -107,6 +107,48 @@ $$ \mathbb{E}\left[E_{\mathrm{out}}\right] \leq \frac{\mathbb{E}[\#\mathrm{SV}]}
 
 ![center](../images/sv_on_z.png)
 
+---
+# The trick
+Given two points $\mathrm{x}$ and $\mathrm{x}' \in \mathcal{X}$, we need $\mathrm{z}^\intercal\mathrm{z}'$
+Let $\mathrm{z}^\intercal\mathrm{z}' = K(\mathrm{x},\mathrm{x}')$ (the kernel)
+
+## Can we compute $K(\mathrm{x},\mathrm{x})$ without transforming $\mathrm{x}$ and $\mathrm{x}'$ ?
+
+---
+# Kernel formulation of SVM
+Remember $Q$
+$$
+\left(
+\begin{array}{ccc}
+y_1y_1K(x_1,x_1) & y_1y_2K(x_1,x_2) & ... & y_1y_NK(x_1,x_N) \\
+y_2y_1K(x_2,x_1) & y_2y_2K(x_2,x_2) & ... & y_2y_NK(x_2,x_N) \\
+... & ... & ... & ...\\
+y_Ny_1K(x_N,x_1) & y_Ny_2K(x_N,x_2) & ... & y_Ny_NK(x_N,x_N) \\
+\end{array}
+\right)
+$$
+
+$$
+g(\mathbf{x}) = \mathrm{sign}\left( \sum_{\alpha_n>0}\alpha_ny_nK(\mathrm{x}_n,\mathrm{x}) + b \right)
+$$
+where
+$$
+b = y_m - \sum_{\alpha_n > 0}\alpha_ny_nK(\mathrm{x}_n, \mathrm{x}_m)
+$$
+---
+# Kernels
+## Polynomial kernel
+$$ K(\mathrm{x}, \mathrm{x}') = \left(\gamma\mathrm{x}^\intercal \mathrm{x}' + r \right)^d $$
+## Radial basis function kernel
+$$ K(\mathrm{x}, \mathrm{x}') = \exp\left(-\gamma||\mathrm{x} - \mathrm{x}'||^2 \right) $$
+## Sigmoid kernel
+$$  K(\mathrm{x}, \mathrm{x}') = \tanh\left(\gamma||\mathrm{x} - \mathrm{x}'|| + r \right) $$
+---
+# How do we know that $K(\mathrm{x}, \mathrm{x}') ...$
+defines a valid generalized inner product in some space $\mathcal{Z}$ space.
+1. By construction
+2. Math properties (Mercer's condition)
+3. Who cares?
 
 ---
 # Soft Margin
